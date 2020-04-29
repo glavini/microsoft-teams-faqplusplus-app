@@ -5,10 +5,10 @@
   "id": "98fc546e-ef74-42cb-8a16-9e7df8c9851f",
   "packageName": "com.microsoft.teams.faqplus",
   "developer": {
-    "name": "<<companyName>>",
-    "websiteUrl": "<<websiteUrl>>",
-    "privacyUrl": "<<privacyUrl>>",
-    "termsOfUseUrl": "<<termsOfUseUrl>>"
+    "name": "Gabriel Lavini",
+    "websiteUrl": "https://www.microsoft.com",
+    "privacyUrl": "https://www.teams.com/privacy",
+    "termsOfUseUrl": "https://www.teams.com/termsofuser"
   },
   "icons": {
     "color": "color.png",
@@ -18,13 +18,13 @@
     "short": "FAQ Plus"
   },
   "description": {
-    "short": "A friendly FAQ bot that answers questions and connects you to experts.",
-    "full": "A friendly question and answer bot that answers commonly asked questions. If it can't answer, it will put you in touch with an expert as soon as they are available."
+    "short": "Un Bot que responde preguntas frecuentes y lo contacta con expertos.",
+    "full": "Un Bot amigable de preguntas y respuestas que responde preguntas frecuentes. Si no puede responder, lo pondrá en contacto con un experto tan pronto como estén disponibles."
   },
   "accentColor": "#64A2CC",
   "bots": [
     {
-      "botId": "<<botId>>",
+      "botId": "24e8a56c-53c4-4b9f-ace4-cf46673e754d",
       "scopes": [
         "personal",
         "team"
@@ -36,16 +36,16 @@
             ],
             "commands": [
                 {
-                    "title": "Take a tour",
-                    "description": "Tour of key features"
+                    "title": "Hacer un recorrido",
+                    "description": "Recorrido por las características clave"
                 },
                 {
-                    "title": "Ask an expert",
-                    "description": "Connect with an expert"
+                    "title": "Contactar a un experto",
+                    "description": "Contactar a un experto"
                 },
                 {
-                    "title": "Share feedback",
-                    "description": "Send feedback"
+                    "title": "Compartir comentarios",
+                    "description": "Compartir comentarios"
                 }
             ]
         }
@@ -58,7 +58,7 @@
     {
       "entityId": "help",
       "name": "Help",
-      "contentUrl": "https://<<appDomain>>/help?theme={theme}",
+      "contentUrl": "https://cencosudfaqplus.azurewebsites.net/help?theme={theme}",
       "scopes": [
         "personal"
       ]
@@ -69,6 +69,6 @@
     "messageTeamMembers"
   ],
   "validDomains": [
-    "<<appDomain>>"
+    "cencosudfaqplus.azurewebsites.net"
   ]
 }
