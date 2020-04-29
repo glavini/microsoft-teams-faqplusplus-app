@@ -61,7 +61,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Comentarios sobre la App.
+        ///   Looks up a localized string similar to Comentarios sobre el Bot.
         /// </summary>
         public static string AppFeedbackText {
             get {
@@ -304,7 +304,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Compartir opinión de la App.
+        ///   Looks up a localized string similar to Compartir opinión sobre el Bot.
         /// </summary>
         public static string FeedbackHeaderText {
             get {
@@ -583,7 +583,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Compartir opinión de la App.
+        ///   Looks up a localized string similar to Compartir opinión sobre el Bot.
         /// </summary>
         public static string ShareFeedbackTitleText {
             get {
@@ -700,7 +700,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tour de Teams.
+        ///   Looks up a localized string similar to Hacer un recorrido.
         /// </summary>
         public static string TakeATeamTourButtonText {
             get {
@@ -709,7 +709,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tomar un tour.
+        ///   Looks up a localized string similar to Hacer un recorrido.
         /// </summary>
         public static string TakeATourButtonText {
             get {
@@ -855,7 +855,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Hola equipo,   
         ///
-        ///Soy un bot amigable de preguntas y respuestas para dar soporte a personas que interactúen conmigo y necesiten asistencia.
+        ///Soy un Bot amigable de preguntas y respuestas para dar soporte a personas que interactúen conmigo y necesiten asistencia.
         ///    .
         /// </summary>
         public static string WelcomeTeamCardContent {

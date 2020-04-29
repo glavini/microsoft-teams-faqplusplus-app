@@ -154,7 +154,7 @@
     <comment>Placeholder label where the user enters feedback in the text box.</comment>
   </data>
   <data name="FeedbackHeaderText" xml:space="preserve">
-    <value>Compartir opinión de la App</value>
+    <value>Compartir opinión sobre el Bot</value>
     <comment>Share feedback card title text- bot menu command.</comment>
   </data>
   <data name="QuestionLineText" xml:space="preserve">
@@ -210,13 +210,13 @@
     <comment>Team carousel query card content- team can keep track of the user request.</comment>
   </data>
   <data name="TakeATeamTourButtonText" xml:space="preserve">
-    <value>Tour de Teams</value>
+    <value>Hacer un recorrido</value>
     <comment>Action button which gives tour for the team on bot Functionalities.</comment>
   </data>
   <data name="WelcomeTeamCardContent" xml:space="preserve">
     <value>Hola equipo,   
 
-Soy un bot amigable de preguntas y respuestas para dar soporte a personas que interactúen conmigo y necesiten asistencia.
+Soy un Bot amigable de preguntas y respuestas para dar soporte a personas que interactúen conmigo y necesiten asistencia.
     </value>
     <comment>Welcome message when bot is added to a new team.</comment>
   </data>
@@ -277,7 +277,7 @@ Soy un bot amigable de preguntas y respuestas para dar soporte a personas que in
     <comment>Answer from the QnA Maker.</comment>
   </data>
   <data name="AppFeedbackText" xml:space="preserve">
-    <value>Comentarios sobre la App</value>
+    <value>Comentarios sobre el Bot</value>
     <comment>This text is used as title for app feedback type card.</comment>
   </data>
   <data name="MandatoryTitleFieldText" xml:space="preserve">
@@ -297,7 +297,7 @@ Soy un bot amigable de preguntas y respuestas para dar soporte a personas que in
     <comment>Text in the SME feedback card, The placeholder {0} represents the name of the person sharing the feedback. The placeholder {1} represents the feedback type.</comment>
   </data>
   <data name="ShareFeedbackTitleText" xml:space="preserve">
-    <value>Compartir opinión de la App</value>
+    <value>Compartir opinión sobre el Bot</value>
     <comment>Title text of share feedback user carousel card.</comment>
   </data>
   <data name="AskAnExpertDisplayText" xml:space="preserve">
@@ -453,7 +453,7 @@ Soy un bot amigable de preguntas y respuestas para dar soporte a personas que in
     <comment>Rating is mandatory , a warning message to the user when rating is not submitted in share feedback activity.</comment>
   </data>
   <data name="TakeATourButtonText" xml:space="preserve">
-    <value>Tomar un tour</value>
+    <value>Hacer un recorrido</value>
     <comment>Take a tour button available for the users on welcome card, through which user can take a tour on bot functionalities in personal scope. </comment>
   </data>
   <data name="TitleFact" xml:space="preserve">
