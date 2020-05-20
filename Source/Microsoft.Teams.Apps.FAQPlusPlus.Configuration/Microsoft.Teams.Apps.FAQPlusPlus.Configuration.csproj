@@ -263,6 +263,7 @@
     </Compile>
     <Compile Include="Models\KnowledgeBaseViewModel.cs" />
     <Compile Include="Models\HelpTabViewModel.cs" />
+    <Compile Include="Models\SaveConversationsViewModel.cs" />
     <Compile Include="Models\TeamViewModel.cs" />
     <Compile Include="Models\WelcomeMessageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -319,6 +320,7 @@
     </None>
     <Content Include="Views\Home\_HelpTab.cshtml" />
     <Content Include="Views\Shared\_Spinner.cshtml" />
+    <Content Include="Views\Home\_Conversations.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />

@@ -565,7 +565,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Compartir opinión.
+        ///   Looks up a localized string similar to Calificar la respuesta.
         /// </summary>
         public static string ShareFeedbackButtonText {
             get {
@@ -574,7 +574,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Compartir opinión.
+        ///   Looks up a localized string similar to Calificar la respuesta.
         /// </summary>
         public static string ShareFeedbackDisplayText {
             get {

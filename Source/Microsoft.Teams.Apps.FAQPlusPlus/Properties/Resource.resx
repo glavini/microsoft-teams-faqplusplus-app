@@ -142,7 +142,7 @@
     <comment>Suggests the user to ask question.</comment>
   </data>
   <data name="ShareFeedbackButtonText" xml:space="preserve">
-    <value>Compartir opinión</value>
+    <value>Calificar la respuesta</value>
     <comment>Button text for share feedback show card in QnA response card.</comment>
   </data>
   <data name="DescriptionText" xml:space="preserve">
@@ -305,7 +305,7 @@ Soy un Bot amigable de preguntas y respuestas para dar soporte a personas que in
     <comment>Ask an expert display text: text sent to the bot when ask an expert button is clicked.</comment>
   </data>
   <data name="ShareFeedbackDisplayText" xml:space="preserve">
-    <value>Compartir opinión</value>
+    <value>Calificar la respuesta</value>
     <comment>Share feedback display text: text sent to the bot when share feedback button is clicked.</comment>
   </data>
   <data name="OpenStatusTitle" xml:space="preserve">

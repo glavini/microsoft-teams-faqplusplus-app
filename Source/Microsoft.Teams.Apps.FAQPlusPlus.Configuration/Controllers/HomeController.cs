@@ -214,6 +214,40 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Configuration.Controllers
         }
 
         /// <summary>
+        /// Save or update save conversations to be used by bot in table storage which is received from View
+        /// </summary>
+        /// <param name="saveConversations">saveConversations</param>
+        /// <returns>View</returns>
+        [HttpPost]
+        public async Task<ActionResult> SaveSaveConversationsAsync(string saveConversations)
+        {
+            bool saved = await this.configurationPovider.SaveOrUpdateEntityAsync(saveConversations, ConfigurationEntityTypes.SaveConversations);
+            if (saved)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.OK);
+            }
+            else
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, "Sorry, unable to save the save conversations due to an internal error. Try again.");
+            }
+        }
+
+        /// <summary>
+        /// Get already saved Save Conversations from table storage
+        /// </summary>
+        /// <returns>Save Conversations</returns>
+        public async Task<string> GetSavedSaveConversationsAsync()
+        {
+            var saveConversations = await this.configurationPovider.GetSavedEntityDetailAsync(ConfigurationEntityTypes.SaveConversations);
+            if (saveConversations.Equals(string.Empty))
+            {
+                await this.SaveSaveConversationsAsync(false.ToString());
+            }
+
+            return await this.configurationPovider.GetSavedEntityDetailAsync(ConfigurationEntityTypes.SaveConversations);
+        }
+
+        /// <summary>
         /// Based on deep link URL received find team id and return it to that it can be saved
         /// </summary>
         /// <param name="teamIdDeepLink">team Id deep link</param>

@@ -29,12 +29,12 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Cards
             {
                 Body = new List<AdaptiveElement>
                 {
-                    new AdaptiveTextBlock
-                    {
-                        Weight = AdaptiveTextWeight.Bolder,
-                        Text = Resource.ResponseHeaderText,
-                        Wrap = true,
-                    },
+                    // new AdaptiveTextBlock
+                    // {
+                    //     Weight = AdaptiveTextWeight.Bolder,
+                    //     Text = Resource.ResponseHeaderText,
+                    //     Wrap = true,
+                    // },
                     new AdaptiveTextBlock
                     {
                         Text = question,
@@ -50,21 +50,6 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Cards
                 {
                     new AdaptiveSubmitAction
                     {
-                        Title = Resource.AskAnExpertButtonText,
-                        Data = new ResponseCardPayload
-                        {
-                            MsTeams = new CardAction
-                            {
-                                Type = ActionTypes.MessageBack,
-                                DisplayText = Resource.AskAnExpertDisplayText,
-                                Text = FaqPlusPlusBot.AskAnExpert,
-                            },
-                            UserQuestion = userQuestion,
-                            KnowledgeBaseAnswer = answer,
-                        }
-                    },
-                    new AdaptiveSubmitAction
-                    {
                         Title = Resource.ShareFeedbackButtonText,
                         Data = new ResponseCardPayload
                         {
@@ -73,6 +58,21 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Cards
                                 Type = ActionTypes.MessageBack,
                                 DisplayText = Resource.ShareFeedbackDisplayText,
                                 Text = FaqPlusPlusBot.ShareFeedback,
+                            },
+                            UserQuestion = userQuestion,
+                            KnowledgeBaseAnswer = answer,
+                        }
+                    },
+                    new AdaptiveSubmitAction
+                    {
+                        Title = Resource.AskAnExpertButtonText,
+                        Data = new ResponseCardPayload
+                        {
+                            MsTeams = new CardAction
+                            {
+                                Type = ActionTypes.MessageBack,
+                                DisplayText = Resource.AskAnExpertDisplayText,
+                                Text = FaqPlusPlusBot.AskAnExpert,
                             },
                             UserQuestion = userQuestion,
                             KnowledgeBaseAnswer = answer,
