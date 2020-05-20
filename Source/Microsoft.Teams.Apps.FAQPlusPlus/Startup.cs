@@ -47,6 +47,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus
             services.AddHttpClient();
             services.AddSingleton<ICredentialProvider, ConfigurationCredentialProvider>();
             services.AddSingleton<ITicketsProvider>(new TicketsProvider(this.Configuration["StorageConnectionString"]));
+            services.AddSingleton<IConversationsProvider>(new ConversationsProvider(this.Configuration["StorageConnectionString"]));
             services.AddSingleton<IBotFrameworkHttpAdapter, BotFrameworkHttpAdapter>();
             services.AddSingleton(new MicrosoftAppCredentials(this.Configuration["MicrosoftAppId"], this.Configuration["MicrosoftAppPassword"]));
             services.AddTransient<IBot>((provider) => new FaqPlusPlusBot(
@@ -57,7 +58,8 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus
                 this.Configuration["AppBaseUri"],
                 this.Configuration["TenantId"],
                 provider.GetRequiredService<MicrosoftAppCredentials>(),
-                provider.GetRequiredService<ITicketsProvider>()));
+                provider.GetRequiredService<ITicketsProvider>(),
+                provider.GetRequiredService<IConversationsProvider>()));
             services.AddApplicationInsightsTelemetry();
             services.AddSingleton<IQnAMakerFactory, QnAMakerFactory>();
             services.AddSingleton<ISearchService, SearchService>();

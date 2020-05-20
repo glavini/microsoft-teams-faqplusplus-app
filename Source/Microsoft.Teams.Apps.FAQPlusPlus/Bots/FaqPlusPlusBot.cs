@@ -59,6 +59,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Bots
         private readonly string appBaseUri;
         private readonly MicrosoftAppCredentials microsoftAppCredentials;
         private readonly ITicketsProvider ticketsProvider;
+        private readonly IConversationsProvider conversationsProvider;
         private readonly string expectedTenantId;
 
         /// <summary>
@@ -72,6 +73,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Bots
         /// <param name="expectedTenantId">The expected Tenant Id (from configuration)</param>
         /// <param name="microsoftAppCredentials">Microsoft app credentials to use</param>
         /// <param name="ticketsProvider">The tickets provider.</param>
+        /// <param name="conversationsProvider">The conversations provider.</param>
         public FaqPlusPlusBot(
             TelemetryClient telemetryClient,
             IConfigurationProvider configurationProvider,
@@ -80,7 +82,8 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Bots
             string appBaseUri,
             string expectedTenantId,
             MicrosoftAppCredentials microsoftAppCredentials,
-            ITicketsProvider ticketsProvider)
+            ITicketsProvider ticketsProvider,
+            IConversationsProvider conversationsProvider)
         {
             this.telemetryClient = telemetryClient;
             this.configurationProvider = configurationProvider;
@@ -89,6 +92,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Bots
             this.appBaseUri = appBaseUri;
             this.microsoftAppCredentials = microsoftAppCredentials;
             this.ticketsProvider = ticketsProvider;
+            this.conversationsProvider = conversationsProvider;
             this.expectedTenantId = expectedTenantId;
         }
 
@@ -266,6 +270,9 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Bots
                     {
                         await turnContext.SendActivityAsync(MessageFactory.Attachment(UnrecognizedInputCard.GetCard(text)));
                     }
+
+                    // TODO: Save conversation
+                    ConversationEntity newConversation = await this.CreateConversationAsync(message, queryResult);
 
                     break;
             }
@@ -658,6 +665,32 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Bots
             await this.ticketsProvider.SaveOrUpdateTicketAsync(ticketEntity);
 
             return ticketEntity;
+        }
+
+        // TODO: Create a new conversation from the input
+        private async Task<ConversationEntity> CreateConversationAsync(IMessageActivity message, QueryResult data)
+        {
+            ConversationEntity conversationEntity = new ConversationEntity
+            {
+                ConversationId = Guid.NewGuid().ToString(),
+                DateCreated = DateTime.UtcNow,
+                Title = string.Empty, // data.Title,
+                Description = string.Empty, // data.Description,
+                RequesterName = string.Empty, // member.Name,
+                RequesterUserPrincipalName = string.Empty, // member.UserPrincipalName,
+                RequesterGivenName = string.Empty, // member.GivenName,
+                RequesterConversationId = message.Conversation.Id,
+                LastModifiedByName = message.From.Name,
+                LastModifiedByObjectId = message.From.AadObjectId,
+                UserQuestion = string.Empty, // data.UserQuestion,
+                KnowledgeBaseAnswer = string.Empty, // data.KnowledgeBaseAnswer,
+                Message = ((JObject)message.Value).ToString(),
+                Result = data.ToString()
+            };
+
+            await this.conversationsProvider.SaveOrUpdateConversationAsync(conversationEntity);
+
+            return conversationEntity;
         }
 
         // Verify if the tenant Id in the message is the same tenant Id used when application was configured
