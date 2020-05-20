@@ -152,7 +152,7 @@ Puede hacer las siguientes preguntas:
     <value>Proporcione un mensaje de bienvenida que será utilizado por el Bot y luego haga clic en Aceptar para agregar o Editar para modificar</value>
     <comment>Message for welcome message when information icon is hovered</comment>
   </data>
-  <data name="SaveConversation" xml:space="preserve">
+  <data name="SaveConversationsToolTipHoverMessage" xml:space="preserve">
     <value>Grabar conversaciones</value>
     <comment>Grabar conversaciones de usuarios con el Bot</comment>
   </data>

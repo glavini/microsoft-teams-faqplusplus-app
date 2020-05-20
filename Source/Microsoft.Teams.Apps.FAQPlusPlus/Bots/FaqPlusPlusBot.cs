@@ -272,7 +272,12 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Bots
                     }
 
                     // TODO: Save conversation
-                    ConversationEntity newConversation = await this.CreateConversationAsync(message, queryResult);
+                    var saveConversations = await this.configurationProvider.GetSavedEntityDetailAsync(ConfigurationEntityTypes.SaveConversations);
+                    if (bool.Parse(saveConversations))
+                    {
+                        var userDetails = await this.GetUserDetailsInPersonalChatAsync(turnContext, cancellationToken);
+                        ConversationEntity newConversation = await this.CreateConversationAsync(message, queryResult, userDetails);
+                    }
 
                     break;
             }
@@ -668,24 +673,20 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Bots
         }
 
         // TODO: Create a new conversation from the input
-        private async Task<ConversationEntity> CreateConversationAsync(IMessageActivity message, QueryResult data)
+        private async Task<ConversationEntity> CreateConversationAsync(IMessageActivity message, QueryResult data, TeamsChannelAccount member)
         {
             ConversationEntity conversationEntity = new ConversationEntity
             {
                 ConversationId = Guid.NewGuid().ToString(),
-                DateCreated = DateTime.UtcNow,
-                Title = string.Empty, // data.Title,
-                Description = string.Empty, // data.Description,
-                RequesterName = string.Empty, // member.Name,
-                RequesterUserPrincipalName = string.Empty, // member.UserPrincipalName,
-                RequesterGivenName = string.Empty, // member.GivenName,
+                RequesterName = member.Name,
+                RequesterUserPrincipalName = member.UserPrincipalName,
+                RequesterGivenName = member.GivenName,
                 RequesterConversationId = message.Conversation.Id,
-                LastModifiedByName = message.From.Name,
-                LastModifiedByObjectId = message.From.AadObjectId,
-                UserQuestion = string.Empty, // data.UserQuestion,
-                KnowledgeBaseAnswer = string.Empty, // data.KnowledgeBaseAnswer,
-                Message = ((JObject)message.Value).ToString(),
-                Result = data.ToString()
+                UserQuestion = message.Text,
+                KnowledgeBaseAnswer = data.Answer,
+                KnowledgeBaseQuestion = data.Questions[0],
+                KnowledgeBaseScore = data.Score,
+                KnowledgeBaseAnswerSource = data.Source
             };
 
             await this.conversationsProvider.SaveOrUpdateConversationAsync(conversationEntity);
