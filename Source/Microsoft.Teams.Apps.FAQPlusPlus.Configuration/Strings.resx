@@ -118,38 +118,42 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DefaultHelpTabText" xml:space="preserve">
-    <value>Hi, I'm your friendly Q&amp;A bot. You can ask me questions, and I'll do my best to answer. If I can't help, I'll connect you to an expert.
+    <value>Hola, soy tu amigable Bot de preguntas y respuestas. Puedes hacerme preguntas y haré todo lo posible para responder. Si no puedo ayudar, te conectaré con un experto.
 
-My key features:
+Mis características principales:
 
-* Ask a question, get an answer
-* Ask an expert
-* Share feedback</value>
+* Haz una pregunta, obtén una respuesta
+* Pregunta a un experto
+* Compartir comentarios</value>
     <comment>Default help static tab text to be stored in configuration app</comment>
   </data>
   <data name="DefaultWelcomeMessage" xml:space="preserve">
-    <value>Hi, I'm your friendly Q&amp;A bot. You can ask me questions, and I'll do my best to answer. If I can't help, I'll connect you to an expert.
+    <value>Hola, soy tu amigable Bot de preguntas y respuestas. Puedes hacerme preguntas y haré todo lo posible para responder. Si no puedo ayudar, te conectaré con un experto.
 
-You can ask the following questions:
-* How do you work?
-* Which benefits are available?
-* What things are available here right now?</value>
+Puede hacer las siguientes preguntas:
+* ¿Como trabajas?
+* ¿Qué beneficios hay disponibles?
+* ¿Qué cosas están disponibles aquí ahora mismo?</value>
     <comment>Default welcome message text to be stored in configuration app</comment>
   </data>
   <data name="HelpTabTextToolTipHoverMessage" xml:space="preserve">
-    <value>Provide text which will be displayed in Help tab of the bot and then click on Ok to add or Edit to modify</value>
+    <value>Proporcione el texto que se mostrará en la pestaña Ayuda del Bot y luego haga clic en Aceptar para agregar o Editar para modificar</value>
     <comment>Message for help tab when information icon is hovered</comment>
   </data>
   <data name="KnowledgeBaseToolTipHoverMessage" xml:space="preserve">
-    <value>Provide a valid knowledgebase Id which will be used by bot and then click on Ok to add or Edit to modify</value>
+    <value>Proporcione un ID de base de conocimiento válido que será utilizado por el Bot y luego haga clic en Aceptar para agregar o Editar para modificar</value>
     <comment>Message for knowledgebase Id when information icon is hovered</comment>
   </data>
   <data name="TeamIdToolTipHoverMessage" xml:space="preserve">
-    <value>Provide a team Id deeplink which will be used by bot and then click on Ok to add or Edit to modify</value>
+    <value>Proporcione un enlace del equipo Teams que será utilizado por el Bot y luego haga clic en Aceptar para agregar o Editar para modificar</value>
     <comment>Message for team Id when information icon is hovered</comment>
   </data>
   <data name="WelcomeMessageToolTipHoverMessage" xml:space="preserve">
-    <value>Provide a welcome message which will be used by bot and then click on Ok to add or Edit to modify</value>
+    <value>Proporcione un mensaje de bienvenida que será utilizado por el Bot y luego haga clic en Aceptar para agregar o Editar para modificar</value>
     <comment>Message for welcome message when information icon is hovered</comment>
+  </data>
+  <data name="SaveConversation" xml:space="preserve">
+    <value>Grabar conversaciones</value>
+    <comment>Grabar conversaciones de usuarios con el Bot</comment>
   </data>
 </root>

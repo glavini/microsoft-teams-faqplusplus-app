@@ -19,7 +19,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Configuration {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Strings {
@@ -61,13 +61,13 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Configuration {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hi, I&apos;m your friendly Q&amp;A bot. You can ask me questions, and I&apos;ll do my best to answer. If I can&apos;t help, I&apos;ll connect you to an expert.
+        ///   Looks up a localized string similar to Hola, soy tu amigable Bot de preguntas y respuestas. Puedes hacerme preguntas y haré todo lo posible para responder. Si no puedo ayudar, te conectaré con un experto.
         ///
-        ///My key features:
+        ///Mis características principales:
         ///
-        ///* Ask a question, get an answer
-        ///* Ask an expert
-        ///* Share feedback.
+        ///* Haz una pregunta, obtén una respuesta
+        ///* Pregunta a un experto
+        ///* Compartir comentarios.
         /// </summary>
         public static string DefaultHelpTabText {
             get {
@@ -76,12 +76,12 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Configuration {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hi, I&apos;m your friendly Q&amp;A bot. You can ask me questions, and I&apos;ll do my best to answer. If I can&apos;t help, I&apos;ll connect you to an expert.
+        ///   Looks up a localized string similar to Hola, soy tu amigable Bot de preguntas y respuestas. Puedes hacerme preguntas y haré todo lo posible para responder. Si no puedo ayudar, te conectaré con un experto.
         ///
-        ///You can ask the following questions:
-        ///* How do you work?
-        ///* Which benefits are available?
-        ///* What things are available here right now?.
+        ///Puede hacer las siguientes preguntas:
+        ///* ¿Como trabajas?
+        ///* ¿Qué beneficios hay disponibles?
+        ///* ¿Qué cosas están disponibles aquí ahora mismo?.
         /// </summary>
         public static string DefaultWelcomeMessage {
             get {
@@ -90,7 +90,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Configuration {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Provide text which will be displayed in Help tab of the bot and then click on Ok to add or Edit to modify.
+        ///   Looks up a localized string similar to Proporcione el texto que se mostrará en la pestaña Ayuda del Bot y luego haga clic en Aceptar para agregar o Editar para modificar.
         /// </summary>
         public static string HelpTabTextToolTipHoverMessage {
             get {
@@ -99,7 +99,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Configuration {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Provide a valid knowledgebase Id which will be used by bot and then click on Ok to add or Edit to modify.
+        ///   Looks up a localized string similar to Proporcione un ID de base de conocimiento válido que será utilizado por el Bot y luego haga clic en Aceptar para agregar o Editar para modificar.
         /// </summary>
         public static string KnowledgeBaseToolTipHoverMessage {
             get {
@@ -108,7 +108,16 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Configuration {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Provide a team Id deeplink which will be used by bot and then click on Ok to add or Edit to modify.
+        ///   Looks up a localized string similar to Grabar conversaciones.
+        /// </summary>
+        public static string SaveConversation {
+            get {
+                return ResourceManager.GetString("SaveConversation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proporcione un enlace del equipo Teams que será utilizado por el Bot y luego haga clic en Aceptar para agregar o Editar para modificar.
         /// </summary>
         public static string TeamIdToolTipHoverMessage {
             get {
@@ -117,7 +126,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Configuration {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Provide a welcome message which will be used by bot and then click on Ok to add or Edit to modify.
+        ///   Looks up a localized string similar to Proporcione un mensaje de bienvenida que será utilizado por el Bot y luego haga clic en Aceptar para agregar o Editar para modificar.
         /// </summary>
         public static string WelcomeMessageToolTipHoverMessage {
             get {
