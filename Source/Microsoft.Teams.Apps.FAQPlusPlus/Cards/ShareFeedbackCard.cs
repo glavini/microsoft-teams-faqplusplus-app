@@ -141,7 +141,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Cards
                         Id = nameof(ShareFeedbackCardPayload.Description),
                         Placeholder = Resource.FeedbackDescriptionPlaceholderText,
                         IsMultiline = true,
-                        Value = data.Description,
+                        // Value = data.Description,
                     }
                 },
                 Actions = new List<AdaptiveAction>
