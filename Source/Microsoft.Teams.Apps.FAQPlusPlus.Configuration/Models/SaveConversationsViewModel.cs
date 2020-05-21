@@ -17,6 +17,6 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Configuration.Models
         // [StringLength(maximumLength: 10, ErrorMessage = "El texto para guardar conversaciones debe contener True o False.", MinimumLength = 2)]
         [DataType(DataType.Text)]
         [Display(Name = "Guardar conversaciones")]
-        public string SaveConversationsText { get; set; }
+        public bool SaveConversationsText { get; set; }
     }
 }

@@ -5,10 +5,9 @@
     <div class="form-group" data-form-name="saveConversationsText">
         <div class="col-lg-3">
             @Html.LabelFor(model => model.SaveConversationsText, htmlAttributes: new { @class = "font-bold" })
-            <span class="mandatoryField">*</span>
         </div>
         <div class="col-lg-5">
-            @Html.CheckBoxFor(model => bool.Parse(model.SaveConversationsText), htmlAttributes: new { @class = "form-control saveConversationsTextIdTextBox toggleCheckBox", @placeholder = "Marque si desea guardar las conversaciones." })
+            @Html.CheckBoxFor(model => model.SaveConversationsText )
             @Html.ValidationMessageFor(model => model.SaveConversationsText, "", htmlAttributes: new { @class = "error-message" })
         </div>
         <div class="col-lg-1">
