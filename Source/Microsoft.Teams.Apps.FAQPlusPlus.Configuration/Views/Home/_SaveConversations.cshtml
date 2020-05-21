@@ -8,8 +8,7 @@
             <span class="mandatoryField">*</span>
         </div>
         <div class="col-lg-5">
-            @*@Html.TextBoxFor(model => model.SaveConversationsText, htmlAttributes: new { @class = "form-control saveConversationsTextIdTextBox toggleTextBox", @placeholder = "Ingrese True o False si desea guardar las conversaciones." })*@
-            @Html.CheckBoxFor(model => bool.Parse(model.SaveConversationsText), htmlAttributes: new { @class = "form-control saveConversationsTextIdTextBox toggleCheckBox", @placeholder = "Marque si desea guardar las conversaciones." })*@
+            @Html.CheckBoxFor(model => bool.Parse(model.SaveConversationsText), htmlAttributes: new { @class = "form-control saveConversationsTextIdTextBox toggleCheckBox", @placeholder = "Marque si desea guardar las conversaciones." })
             @Html.ValidationMessageFor(model => model.SaveConversationsText, "", htmlAttributes: new { @class = "error-message" })
         </div>
         <div class="col-lg-1">
