@@ -1,0 +1,28 @@
+﻿@model Microsoft.Teams.Apps.FAQPlusPlus.Configuration.Models.SaveConversationsViewModel
+
+@using (Ajax.BeginForm("SaveSaveConversationsTextAsync", "Home", new AjaxOptions { HttpMethod = "POST", OnSuccess = "onSaveSuccess", OnFailure = "onSaveFailure" }, htmlAttributes: new { @class = "formToSubmit" }))
+{
+    <div class="form-group" data-form-name="saveConversationsText">
+        <div class="col-lg-3">
+            @Html.LabelFor(model => model.SaveConversationsText, htmlAttributes: new { @class = "font-bold" })
+            <span class="mandatoryField">*</span>
+            <div class="saveConversationsTextNote">
+                (Please note that this text will be accessible to anyone having access to the URL of the tab)
+            </div>
+        </div>
+        <div class="col-lg-5">
+            @Html.TextAreaFor(model => model.SaveConversationsText, htmlAttributes: new { @class = "form-control saveConversationsTextIdTextBox toggleTextBox", @placeholder = "Enter save conversations text, up to 3000 characters. Markdown is supported." })
+            @Html.ValidationMessageFor(model => model.SaveConversationsText, "", htmlAttributes: new { @class = "error-message" })
+        </div>
+        <div class="col-lg-1">
+            <span id="SaveConversationsTextStorageStatusIcon"></span>
+        </div>
+        <div class="col-lg-3">
+            <input type="button" value="OK" class="btn btn-primary toggleToEditButton" id="saveConversationsTextSubmitButton" />
+            <span class="glyphicon glyphicon-info-sign infoSignMargin" data-toggle="tooltip" title="@Strings.SaveConversationsTextToolTipHoverMessage"></span>
+        </div>
+        <div class="col-lg-offset-3 col-lg-5">
+            <div id="saveConversationsTextStorageStatusMessage" class="error-message"></div>
+        </div>
+    </div>
+}

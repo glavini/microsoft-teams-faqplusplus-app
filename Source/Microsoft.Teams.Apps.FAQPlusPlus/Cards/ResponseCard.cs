@@ -21,65 +21,128 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Cards
         /// </summary>
         /// <param name="question">Knowledgebase question, from QnA Maker service.</param>
         /// <param name="answer">Knowledgebase answer, from QnA Maker service.</param>
+        /// <param name="source">Knowledgebase source, from QnA Maker service.</param>
         /// <param name="userQuestion">Actual question asked by the user to the bot.</param>
         /// <returns>Response card.</returns>
-        public static Attachment GetCard(string question, string answer, string userQuestion)
+        public static Attachment GetCard(string question, string answer, string source, string userQuestion)
         {
-            AdaptiveCard responseCard = new AdaptiveCard("1.0")
+            AdaptiveCard responseCard;
+            if (source.Contains("Editorial"))
             {
-                Body = new List<AdaptiveElement>
+                responseCard = new AdaptiveCard("1.0")
                 {
-                    // new AdaptiveTextBlock
-                    // {
-                    //     Weight = AdaptiveTextWeight.Bolder,
-                    //     Text = Resource.ResponseHeaderText,
-                    //     Wrap = true,
-                    // },
-                    new AdaptiveTextBlock
+                    Body = new List<AdaptiveElement>
                     {
-                        Text = question,
-                        Wrap = true,
-                    },
-                    new AdaptiveTextBlock
-                    {
-                        Text = answer,
-                        Wrap = true,
-                    }
-                },
-                Actions = new List<AdaptiveAction>
-                {
-                    new AdaptiveSubmitAction
-                    {
-                        Title = Resource.ShareFeedbackButtonText,
-                        Data = new ResponseCardPayload
+                         new AdaptiveTextBlock
+                         {
+                             Weight = AdaptiveTextWeight.Bolder,
+                             Text = Resource.ResponseHeaderText,
+                             Wrap = true,
+                         },
+                        new AdaptiveTextBlock
                         {
-                            MsTeams = new CardAction
-                            {
-                                Type = ActionTypes.MessageBack,
-                                DisplayText = Resource.ShareFeedbackDisplayText,
-                                Text = FaqPlusPlusBot.ShareFeedback,
-                            },
-                            UserQuestion = userQuestion,
-                            KnowledgeBaseAnswer = answer,
+                            Text = question,
+                            Wrap = true,
+                        },
+                        new AdaptiveTextBlock
+                        {
+                            Text = answer,
+                            Wrap = true,
                         }
                     },
-                    new AdaptiveSubmitAction
+                    Actions = new List<AdaptiveAction>
                     {
-                        Title = Resource.AskAnExpertButtonText,
-                        Data = new ResponseCardPayload
+                        new AdaptiveSubmitAction
                         {
-                            MsTeams = new CardAction
+                            Title = Resource.ShareFeedbackButtonText,
+                            Data = new ResponseCardPayload
                             {
-                                Type = ActionTypes.MessageBack,
-                                DisplayText = Resource.AskAnExpertDisplayText,
-                                Text = FaqPlusPlusBot.AskAnExpert,
-                            },
-                            UserQuestion = userQuestion,
-                            KnowledgeBaseAnswer = answer,
+                                MsTeams = new CardAction
+                                {
+                                    Type = ActionTypes.MessageBack,
+                                    DisplayText = Resource.ShareFeedbackDisplayText,
+                                    Text = FaqPlusPlusBot.ShareFeedback,
+                                },
+                                UserQuestion = userQuestion,
+                                KnowledgeBaseAnswer = answer,
+                            }
+                        },
+                        new AdaptiveSubmitAction
+                        {
+                            Title = Resource.AskAnExpertButtonText,
+                            Data = new ResponseCardPayload
+                            {
+                                MsTeams = new CardAction
+                                {
+                                    Type = ActionTypes.MessageBack,
+                                    DisplayText = Resource.AskAnExpertDisplayText,
+                                    Text = FaqPlusPlusBot.AskAnExpert,
+                                },
+                                UserQuestion = userQuestion,
+                                KnowledgeBaseAnswer = answer,
+                            }
                         }
                     }
-                }
-            };
+                };
+            }
+            else
+            {
+                responseCard = new AdaptiveCard("1.0")
+                {
+                    Body = new List<AdaptiveElement>
+                    {
+                        // new AdaptiveTextBlock
+                        // {
+                        //     Weight = AdaptiveTextWeight.Bolder,
+                        //     Text = Resource.ResponseHeaderText,
+                        //     Wrap = true,
+                        // },
+                        // new AdaptiveTextBlock
+                        // {
+                        //     Text = question,
+                        //     Wrap = true,
+                        // },
+                        new AdaptiveTextBlock
+                        {
+                            Text = answer,
+                            Wrap = true,
+                        }
+                    },
+                    Actions = new List<AdaptiveAction>
+                    {
+                        new AdaptiveSubmitAction
+                        {
+                            Title = Resource.ShareFeedbackButtonText,
+                            Data = new ResponseCardPayload
+                            {
+                                MsTeams = new CardAction
+                                {
+                                    Type = ActionTypes.MessageBack,
+                                    DisplayText = Resource.ShareFeedbackDisplayText,
+                                    Text = FaqPlusPlusBot.ShareFeedback,
+                                },
+                                UserQuestion = userQuestion,
+                                KnowledgeBaseAnswer = answer,
+                            }
+                        },
+                        new AdaptiveSubmitAction
+                        {
+                            Title = Resource.AskAnExpertButtonText,
+                            Data = new ResponseCardPayload
+                            {
+                                MsTeams = new CardAction
+                                {
+                                    Type = ActionTypes.MessageBack,
+                                    DisplayText = Resource.AskAnExpertDisplayText,
+                                    Text = FaqPlusPlusBot.AskAnExpert,
+                                },
+                                UserQuestion = userQuestion,
+                                KnowledgeBaseAnswer = answer,
+                            }
+                        }
+                    }
+                };
+            }
 
             return new Attachment
             {

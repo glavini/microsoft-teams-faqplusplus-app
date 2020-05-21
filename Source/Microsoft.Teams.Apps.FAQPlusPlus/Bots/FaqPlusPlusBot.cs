@@ -264,7 +264,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Bots
                     var queryResult = await this.GetAnswerFromQnAMakerAsync(text, turnContext, cancellationToken);
                     if (queryResult != null)
                     {
-                        await turnContext.SendActivityAsync(MessageFactory.Attachment(ResponseCard.GetCard(queryResult.Questions[0], queryResult.Answer, text)));
+                        await turnContext.SendActivityAsync(MessageFactory.Attachment(ResponseCard.GetCard(queryResult.Questions[0], queryResult.Answer, queryResult.Source, text)));
                     }
                     else
                     {

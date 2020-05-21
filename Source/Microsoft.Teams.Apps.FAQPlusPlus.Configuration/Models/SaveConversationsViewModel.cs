@@ -11,12 +11,12 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Configuration.Models
     public class SaveConversationsViewModel
     {
         /// <summary>
-        /// Gets or sets save conversations text box to be used in View
+        /// Gets or sets save conversations message text box to be used in View
         /// </summary>
-        [Required(ErrorMessage = "Enter a save conversations.")]
-        [StringLength(maximumLength: 300, ErrorMessage = "Enter save conversations which should contain True or False.", MinimumLength = 2)]
+        [Required(ErrorMessage = "Enter save conversations text.")]
+        [StringLength(maximumLength: 30, ErrorMessage = "Save conversations text should contain less than 3000 characters.", MinimumLength = 2)]
         [DataType(DataType.Text)]
-        [Display(Name = "Save Conversations")]
-        public string SaveConversations { get; set; }
+        [Display(Name = "Save conversations text")]
+        public string SaveConversationsText { get; set; }
     }
 }

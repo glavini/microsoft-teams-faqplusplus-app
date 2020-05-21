@@ -110,9 +110,9 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Configuration {
         /// <summary>
         ///   Looks up a localized string similar to Grabar conversaciones.
         /// </summary>
-        public static string SaveConversationsToolTipHoverMessage {
+        public static string SaveConversationsTextToolTipHoverMessage {
             get {
-                return ResourceManager.GetString("SaveConversationsToolTipHoverMessage", resourceCulture);
+                return ResourceManager.GetString("SaveConversationsTextToolTipHoverMessage", resourceCulture);
             }
         }
         
