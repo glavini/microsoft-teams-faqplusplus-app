@@ -108,7 +108,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Configuration {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Grabar conversaciones.
+        ///   Looks up a localized string similar to Marque para indicar si desea grabar conversaciones.
         /// </summary>
         public static string SaveConversationsTextToolTipHoverMessage {
             get {

@@ -13,10 +13,10 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Configuration.Models
         /// <summary>
         /// Gets or sets help tab message text box to be used in View
         /// </summary>
-        [Required(ErrorMessage = "Enter help tab text.")]
-        [StringLength(maximumLength: 3000, ErrorMessage = "Help tab text should contain less than 3000 characters.", MinimumLength = 2)]
+        [Required(ErrorMessage = "Ingrese el texto de la pestaña de ayuda.")]
+        [StringLength(maximumLength: 3000, ErrorMessage = "El texto de la pestaña de ayuda debe contener hasta 3000 caracteres.", MinimumLength = 2)]
         [DataType(DataType.Text)]
-        [Display(Name = "Help tab text")]
+        [Display(Name = "Texto de la pestaña de ayuda")]
         public string HelpTabText { get; set; }
     }
 }

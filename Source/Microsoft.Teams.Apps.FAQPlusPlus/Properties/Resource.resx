@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AskAnExpertPlaceholderText" xml:space="preserve">
-    <value>Escribe tu pregunta y detalles de apoyo aquí (máximo 500 caracteres)</value>
+    <value>Escribe tu consulta y detalles de apoyo aquí (máximo 500 caracteres)</value>
     <comment>Ask an expert placeholder text.</comment>
   </data>
   <data name="AskAnExpertText1" xml:space="preserve">
@@ -126,19 +126,19 @@
     <comment>Title of the ask an expert card.</comment>
   </data>
   <data name="AskAnExpertText2" xml:space="preserve">
-    <value>... Si mi respuesta no es satisfactoria ... Te conectaré con un experto.</value>
+    <value>... Si mi respuesta no es satisfactoria, te puedo contactar con un experto.</value>
     <comment>Helps the user in understanding there is an expert team to connect to.</comment>
   </data>
   <data name="FeedbackText1" xml:space="preserve">
-    <value>Cuéntale a mi equipo de expertos como lo estoy haciendo así me pueden mejorar</value>
+    <value>Cuéntale a mi equipo de expertos como estoy haciendo mi trabajo así me pueden mejorar</value>
     <comment>Text suggests that user is invited to share his feedback on his experience using bot.</comment>
   </data>
   <data name="FunctionCardText1" xml:space="preserve">
-    <value>Hacer una pregunta</value>
+    <value>Hacer una consulta</value>
     <comment>Explains what bot does and possible questions.</comment>
   </data>
   <data name="FunctionCardText2" xml:space="preserve">
-    <value>Puedes hacerme una pregunta escribiéndola en el cuadro de chat a continuación, haré todo lo posible para responderla...</value>
+    <value>Puedes hacerme una consulta escribiéndola en el cuadro de chat a continuación, haré todo lo posible para responderla...</value>
     <comment>Suggests the user to ask question.</comment>
   </data>
   <data name="ShareFeedbackButtonText" xml:space="preserve">
@@ -158,7 +158,7 @@
     <comment>Share feedback card title text- bot menu command.</comment>
   </data>
   <data name="QuestionLineText" xml:space="preserve">
-    <value>Esto es lo que encontré para tu pregunta:</value>
+    <value>Esto es lo que encontré para tu consulta:</value>
     <comment>Shows user requested question.</comment>
   </data>
   <data name="StatusFactTitle" xml:space="preserve">
@@ -166,7 +166,7 @@
     <comment>Status one of the available fact set in notification cards.</comment>
   </data>
   <data name="AskAnExpertButtonText" xml:space="preserve">
-    <value>Preguntar a un experto</value>
+    <value>Consultar a un experto</value>
     <comment>Action button which invokes ask an expert show card.</comment>
   </data>
   <data name="ThankYouTextContent" xml:space="preserve">
@@ -178,7 +178,7 @@
     <comment>Ability to chat directly with end user from SME channel.</comment>
   </data>
   <data name="NotificationCardContent" xml:space="preserve">
-    <value>Compartí tu pregunta con los expertos. Ellos te contactaran directamente con un mensaje de chat para ayudarte.</value>
+    <value>Compartí tu consulta con los expertos. Ellos te contactaran directamente con un mensaje de chat para ayudarte.</value>
     <comment>Confirmation message to the user upon asking question to the expert.</comment>
   </data>
   <data name="NotificationCardTitleText" xml:space="preserve">
@@ -221,11 +221,11 @@ Soy un Bot amigable de preguntas y respuestas para dar soporte a personas que in
     <comment>Welcome message when bot is added to a new team.</comment>
   </data>
   <data name="CustomMessage" xml:space="preserve">
-    <value>No pude encontrar ninguna respuesta a tu solicitud. ¿Quieres que le pregunte a un experto?</value>
+    <value>No pude encontrar ninguna respuesta a tu solicitud. ¿Si lo deseas puedes consultar a un experto?</value>
     <comment>Message when user asks random question to the bot.</comment>
   </data>
   <data name="QuestionAskedFactTitle" xml:space="preserve">
-    <value>Pregunta realizada:</value>
+    <value>Consulta realizada:</value>
     <comment>The fact set title for the question asked in the SME Ticket card.</comment>
   </data>
   <data name="SubmitButtonText" xml:space="preserve">
@@ -257,7 +257,7 @@ Soy un Bot amigable de preguntas y respuestas para dar soporte a personas que in
     <comment>Text on change status button.</comment>
   </data>
   <data name="ResponseHeaderText" xml:space="preserve">
-    <value>Esto es lo que encontré:</value>
+    <value>Esto es lo que encontré para tu consulta:</value>
     <comment>Response header-letting the user know that a response is generated to their request from QnA Maker.</comment>
   </data>
   <data name="ClosedFactTitle" xml:space="preserve">
@@ -289,11 +289,11 @@ Soy un Bot amigable de preguntas y respuestas para dar soporte a personas que in
     <comment>This text is used as title for question for expert type card.</comment>
   </data>
   <data name="ResultsFeedbackText" xml:space="preserve">
-    <value>Comentario</value>
+    <value>Compartir opinión sobre el Bot</value>
     <comment>This text is used as title for results feedback card.</comment>
   </data>
   <data name="FeedbackAlertText" xml:space="preserve">
-    <value>**{0}** compartió se opinión</value>
+    <value>**{0}** compartió su opinión</value>
     <comment>Text in the SME feedback card, The placeholder {0} represents the name of the person sharing the feedback. The placeholder {1} represents the feedback type.</comment>
   </data>
   <data name="ShareFeedbackTitleText" xml:space="preserve">
@@ -301,7 +301,7 @@ Soy un Bot amigable de preguntas y respuestas para dar soporte a personas que in
     <comment>Title text of share feedback user carousel card.</comment>
   </data>
   <data name="AskAnExpertDisplayText" xml:space="preserve">
-    <value>Preguntarle a un experto</value>
+    <value>Consultarle a un experto</value>
     <comment>Ask an expert display text: text sent to the bot when ask an expert button is clicked.</comment>
   </data>
   <data name="ShareFeedbackDisplayText" xml:space="preserve">
@@ -337,11 +337,11 @@ Soy un Bot amigable de preguntas y respuestas para dar soporte a personas que in
     <comment>Not applicable is used in scenarios like- ask an expert or share app feedback bot menu command where there is no question and answer from QnA service and to reflect the same in respective fields N/A is used.</comment>
   </data>
   <data name="AssignedTicketUserNotification" xml:space="preserve">
-    <value>Su pregunta ha sido asignada a un experto. Le responderá de forma directa con un mensaje de chat.</value>
+    <value>Su consulta ha sido asignada a un experto. Le responderá de forma directa con un mensaje de chat.</value>
     <comment>Notification text sent to the user who opened a ticket, when the ticket is assigned to an expert.</comment>
   </data>
   <data name="ClosedTicketUserNotification" xml:space="preserve">
-    <value>Esta solicitud ha sido cerrada. Pregunte a un experto nuevamente si aún necesita ayuda.</value>
+    <value>Esta solicitud ha sido cerrada. Si aún necesita ayuda puede volver a consultar con un experto.</value>
     <comment>Notification text sent to the user who opened a ticket, when the ticket is closed.</comment>
   </data>
   <data name="ReopenedTicketUserNotification" xml:space="preserve">

@@ -153,7 +153,7 @@ Puede hacer las siguientes preguntas:
     <comment>Message for welcome message when information icon is hovered</comment>
   </data>
   <data name="SaveConversationsTextToolTipHoverMessage" xml:space="preserve">
-    <value>Grabar conversaciones</value>
+    <value>Marque para indicar si desea grabar conversaciones</value>
     <comment>Grabar conversaciones de usuarios con el Bot</comment>
   </data>
 </root>
