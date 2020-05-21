@@ -672,7 +672,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Bots
             return ticketEntity;
         }
 
-        // TODO: Create a new conversation from the input
+        // Create a new conversation from the input
         private async Task<ConversationEntity> CreateConversationAsync(IMessageActivity message, QueryResult data, TeamsChannelAccount member)
         {
             ConversationEntity conversationEntity = new ConversationEntity
@@ -683,10 +683,10 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Bots
                 RequesterGivenName = member.GivenName,
                 RequesterConversationId = message.Conversation.Id,
                 UserQuestion = message.Text,
-                KnowledgeBaseAnswer = data.Answer,
-                KnowledgeBaseQuestion = data.Questions[0],
-                KnowledgeBaseScore = data.Score,
-                KnowledgeBaseAnswerSource = data.Source
+                KnowledgeBaseAnswer = data == null ? string.Empty : data.Answer,
+                KnowledgeBaseQuestion = data == null ? string.Empty : data.Questions.Length == 0 ? string.Empty : data.Questions[0],
+                KnowledgeBaseScore = data == null ? 0 : data.Score,
+                KnowledgeBaseAnswerSource = data == null ? string.Empty : data.Source
             };
 
             await this.conversationsProvider.SaveOrUpdateConversationAsync(conversationEntity);
