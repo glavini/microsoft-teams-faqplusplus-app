@@ -214,34 +214,34 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Configuration.Controllers
         }
 
         /// <summary>
-        /// Save or update save conversations to be used by bot in table storage which is received from View
+        /// Save or update save conversations text to be used by bot in table storage which is received from View
         /// </summary>
-        /// <param name="saveConversations">saveConversations</param>
+        /// <param name="saveConversationsText">Save conversations text</param>
         /// <returns>View</returns>
         [HttpPost]
-        public async Task<ActionResult> SaveSaveConversationsAsync(string saveConversations)
+        public async Task<ActionResult> SaveSaveConversationsTextAsync(string saveConversationsText)
         {
-            bool saved = await this.configurationPovider.SaveOrUpdateEntityAsync(saveConversations, ConfigurationEntityTypes.SaveConversations);
+            bool saved = await this.configurationPovider.SaveOrUpdateEntityAsync(saveConversationsText, ConfigurationEntityTypes.SaveConversations);
             if (saved)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.OK);
             }
             else
             {
-                return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, "Sorry, unable to save the save conversations due to an internal error. Try again.");
+                return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, "Sorry, unable to save the save conversations text due to an internal error. Try again.");
             }
         }
 
         /// <summary>
-        /// Get already saved Save Conversations from table storage
+        /// Get already saved save conversations message from table storage
         /// </summary>
-        /// <returns>Save Conversations</returns>
-        public async Task<string> GetSavedSaveConversationsAsync()
+        /// <returns>Save conversations text</returns>
+        public async Task<string> GetSavedSaveConversationsTextAsync()
         {
-            var saveConversations = await this.configurationPovider.GetSavedEntityDetailAsync(ConfigurationEntityTypes.SaveConversations);
-            if (saveConversations.Equals(string.Empty))
+            var conversationsText = await this.configurationPovider.GetSavedEntityDetailAsync(ConfigurationEntityTypes.SaveConversations);
+            if (conversationsText.Equals(string.Empty))
             {
-                await this.SaveSaveConversationsAsync(false.ToString());
+                await this.SaveSaveConversationsTextAsync(false.ToString());
             }
 
             return await this.configurationPovider.GetSavedEntityDetailAsync(ConfigurationEntityTypes.SaveConversations);

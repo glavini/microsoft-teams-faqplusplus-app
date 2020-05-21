@@ -41,7 +41,7 @@
         </div>
         <div class="col-lg-12">
             <div class="col-lg-8">
-                @Html.Partial("~/Views/Home/_Conversations.cshtml")
+                @Html.Partial("~/Views/Home/_SaveConversations.cshtml")
             </div>
         </div>
     </div>
@@ -111,15 +111,15 @@
         //Display save conversations message text if its saved if yes then perform edit UI changes
         $.ajax({
             type: "GET",
-            url: '@Url.Action("GetSavedSaveConversationsAsync")',
+            url: '@Url.Action("GetSavedSaveConversationsTextAsync")',
             success: function (result) {
-                if (result != "") {                //Display the default UI when no save conversations results are available for display
-                    $(".saveConversationsTextBox").val(result);
-                    toggleToEdit("saveConversations");
+                if (result != "") {                //Display the default UI when no save conversations text results are available for display
+                    $(".saveConversationsTextIdTextBox").val(result);
+                    toggleToEdit("saveConversationsText");
                 }
             },
             error: function (error) {
-                saveFailureIconAndText("saveConversationsStorageStatusIcon", "saveConversationsStorageStatusMessage", "Unable to display save conversations due to HTTP: " + error.status + ", " + error.statusText);
+                saveFailureIconAndText("saveConversationsTextStorageStatusIcon", "saveConversationsTextStorageStatusMessage", "Unable to display save conversations text due to HTTP: " + error.status + ", " + error.statusText);
             }
         });
     });
