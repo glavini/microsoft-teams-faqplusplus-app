@@ -7,8 +7,8 @@
             @Html.LabelFor(model => model.SaveConversationsText, htmlAttributes: new { @class = "font-bold" })
         </div>
         <div class="col-lg-5">
-            @Html.CheckBoxFor(model => model.SaveConversationsText, htmlAttributes: new { @checked = "@model.SaveConversationsText", @class = "form-control saveConversationsTextIdTextBox toggleTextBox" })
-            @Html.ValidationMessageFor(model => model.SaveConversationsText, "", htmlAttributes: new { @class = "error-message" })
+            @Html.TextBoxFor(model => model.SaveConversationsText, htmlAttributes: new { @class = "form-control saveConversationsTextIdTextBox toggleTextBox hidden" })
+            @Html.CheckBox("auxSaveConversationsText", htmlAttributes: new { onclick = "document.getElementById('SaveConversationsText').value = document.getElementById('auxSaveConversationsText').checked", @class = "saveConversationsTextIdTextBox toggleTextBox" })
         </div>
         <div class="col-lg-1">
             <span id="saveConversationsTextStorageStatusIcon"></span>
