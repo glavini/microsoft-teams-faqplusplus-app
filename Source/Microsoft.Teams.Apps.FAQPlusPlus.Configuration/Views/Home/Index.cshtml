@@ -114,7 +114,9 @@
             url: '@Url.Action("GetSavedSaveConversationsTextAsync")',
             success: function (result) {
                 if (result != "") {                //Display the default UI when no save conversations text results are available for display
-                    $(".saveConversationsTextIdTextBox").val(result);
+                    //$(".saveConversationsTextIdTextBox").val(result);
+                    $("#SaveConversationsText").val(result);
+                    $("#auxSaveConversationsText").prop("checked", result=='true');
                     toggleToEdit("saveConversationsText");
                 }
             },

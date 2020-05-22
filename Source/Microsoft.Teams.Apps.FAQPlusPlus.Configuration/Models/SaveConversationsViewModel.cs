@@ -13,8 +13,6 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Configuration.Models
         /// <summary>
         /// Gets or sets save conversations message text box to be used in View
         /// </summary>
-        [Required(ErrorMessage = "Guardar conversaciones.")]
-        [DataType(DataType.Text)]
         [Display(Name = "Guardar conversaciones")]
         public bool SaveConversationsText { get; set; }
     }
