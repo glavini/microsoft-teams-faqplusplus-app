@@ -7,11 +7,11 @@
             @Html.LabelFor(model => model.SaveConversationsText, htmlAttributes: new { @class = "font-bold" })
         </div>
         <div class="col-lg-5">
-            @Html.CheckBoxFor(model => model.SaveConversationsText )
+            @Html.CheckBoxFor(model => model.SaveConversationsText, htmlAttributes: new { @checked = "@model.SaveConversationsText", @class = "form-control saveConversationsTextIdTextBox toggleTextBox" })
             @Html.ValidationMessageFor(model => model.SaveConversationsText, "", htmlAttributes: new { @class = "error-message" })
         </div>
         <div class="col-lg-1">
-            <span id="SaveConversationsTextStorageStatusIcon"></span>
+            <span id="saveConversationsTextStorageStatusIcon"></span>
         </div>
         <div class="col-lg-3">
             <input type="button" value="OK" class="btn btn-primary toggleToEditButton" id="saveConversationsTextSubmitButton" />
