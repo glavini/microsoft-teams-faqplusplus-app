@@ -16,7 +16,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Cards
         /// <summary>
         /// Maximum length of the knowledge base answer to show.
         /// </summary>
-        public const int KnowledgeBaseAnswerMaxDisplayLength = 500;
+        public const int KnowledgeBaseAnswerMaxDisplayLength = 1000;
 
         /// <summary>
         /// Maximum length of the user title

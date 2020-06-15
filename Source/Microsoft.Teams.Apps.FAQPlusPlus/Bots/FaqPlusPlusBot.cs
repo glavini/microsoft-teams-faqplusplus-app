@@ -271,7 +271,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Bots
                         await turnContext.SendActivityAsync(MessageFactory.Attachment(UnrecognizedInputCard.GetCard(text)));
                     }
 
-                    // TODO: Save conversation
+                    // Save conversation
                     var saveConversations = await this.configurationProvider.GetSavedEntityDetailAsync(ConfigurationEntityTypes.SaveConversations);
                     if (bool.Parse(saveConversations))
                     {
