@@ -250,7 +250,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No pude encontrar ninguna respuesta a tu consulta. ¿Si lo deseas puedes consultar a un experto?.
+        ///   Looks up a localized string similar to No pude encontrar ninguna respuesta a tu consulta. ¿Quieres consultar con un experto?.
         /// </summary>
         public static string CustomMessage {
             get {
