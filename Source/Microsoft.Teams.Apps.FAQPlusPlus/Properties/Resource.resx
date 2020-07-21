@@ -221,7 +221,7 @@ Soy un Bot amigable de preguntas y respuestas para dar soporte a personas que in
     <comment>Welcome message when bot is added to a new team.</comment>
   </data>
   <data name="CustomMessage" xml:space="preserve">
-    <value>No pude encontrar ninguna respuesta a tu consulta. ¿Si lo deseas puedes consultar a un experto?</value>
+    <value>No pude encontrar ninguna respuesta a tu consulta. ¿Quieres consultar con un experto?</value>
     <comment>Message when user asks random question to the bot.</comment>
   </data>
   <data name="QuestionAskedFactTitle" xml:space="preserve">
