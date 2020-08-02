@@ -264,7 +264,8 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Bots
                     var queryResult = await this.GetAnswerFromQnAMakerAsync(text, turnContext, cancellationToken);
                     if (queryResult != null)
                     {
-                        await turnContext.SendActivityAsync(MessageFactory.Attachment(ResponseCard.GetCard(queryResult.Questions[0], queryResult.Answer, queryResult.Source, text)));
+                        string answer = this.ReplaceWildCard(message, turnContext, queryResult.Answer);
+                        await turnContext.SendActivityAsync(MessageFactory.Attachment(ResponseCard.GetCard(queryResult.Questions[0], answer, queryResult.Source, text)));
                     }
                     else
                     {
@@ -281,6 +282,15 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Bots
 
                     break;
             }
+        }
+
+        private string ReplaceWildCard(IMessageActivity message, ITurnContext<IMessageActivity> turnContext, string answer)
+        {
+            string newAnswer = answer;
+            newAnswer = newAnswer.Replace("%user1%", message.From.Properties.ToString(Newtonsoft.Json.Formatting.None));
+            newAnswer = newAnswer.Replace("%user2%", turnContext.Activity.From.Properties.ToString(Newtonsoft.Json.Formatting.None));
+
+            return newAnswer;
         }
 
         // Handle message activity in channel
