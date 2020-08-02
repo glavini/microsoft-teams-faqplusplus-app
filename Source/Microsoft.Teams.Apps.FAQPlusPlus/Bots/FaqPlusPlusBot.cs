@@ -287,8 +287,7 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Bots
         private string ReplaceWildCard(IMessageActivity message, ITurnContext<IMessageActivity> turnContext, string answer)
         {
             string newAnswer = answer;
-            newAnswer = newAnswer.Replace("%user1%", message.From.Properties.ToString(Newtonsoft.Json.Formatting.None));
-            newAnswer = newAnswer.Replace("%user2%", turnContext.Activity.From.Properties.ToString(Newtonsoft.Json.Formatting.None));
+            newAnswer = newAnswer.Replace("%user%", message.From.Name);
 
             return newAnswer;
         }
